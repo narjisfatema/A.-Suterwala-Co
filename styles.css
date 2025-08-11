@@ -1,0 +1,411 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  /* Remove default margin */
+  padding: 0;
+  /* Remove default padding */
+  scroll-behavior: smooth;
+  /* Smooth scrolling */
+  font-family: 'Trebuchet MS';
+  /* Font family */
+  font-weight: normal;
+  box-sizing: border-box;/* Ensure padding and border are included in element's total width and height */
+}
+
+/* Basic layout */
+body {
+  line-height: 1.6;
+  overflow-x: hidden;
+
+}
+
+/*default is 1rem=16px*/
+
+h1 {
+  font-size: 1.75rem;
+  /*24px*/
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p{
+  font-size: 1rem;;
+}
+
+/* Header fix */
+header {
+  top: 0;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  /* Better spacing between logo and nav */
+  align-items: center;
+  box-sizing: border-box;
+  background-color: white;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  /* Consistent padding */
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+  /* Add subtle shadow for better visibility */
+}
+
+.logo-container {
+  max-width: 275px;
+  padding-left: 1rem;
+  /* adds spacing from the left edge */
+  padding-top: 0.4rem;
+  /* aligns it vertically a bit lower */
+  padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  /* Pushes the nav to the right */
+  align-items: center;
+  /* Aligns items vertically */
+  gap: 1.75rem;
+  /* Space between links */
+  padding-right: 2rem;
+  /* Adds padding to the right */
+  font-size: small;
+  /* Font size for nav links */
+  
+  ;
+  justify-content: space-around;
+}
+
+nav a {
+  color: #1c1c84;
+  /* Link color */
+  text-decoration: none;
+}
+
+nav a:hover {
+  cursor: pointer;
+  color: #439424;
+}
+
+
+.hero {
+  display: flex;
+  min-height: 100vh;
+  /* Full viewport height */
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: white;
+  flex-wrap: wrap;
+  /* makes it responsive */
+  padding-top: 6rem;
+  /* Add padding to account for fixed header */
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 50%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.hero-text h1 {
+  font-weight: bold;
+  color: #1c1c84;
+  margin-bottom: 1rem;
+  display: block;
+  /* Ensure proper display */
+}
+
+.hero-text p {
+  font-size: 1rem;
+  
+  align-items: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.hero-text button {
+  align-items: center;
+  padding: 0.60rem 1.25rem;
+  /* Button padding */
+  font-size: 1rem;
+  
+  font-family: 'Trebuchet MS';
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-text button:hover {
+  background-color: #f0f0f0;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 75%;
+  max-width: 500px;
+  height: auto;
+  /* Maintain aspect ratio */
+  object-fit: cover;
+  /* Ensures the image covers the area without distortion */
+  border-radius: 50px;
+}
+
+.services-container {
+  justify-items: center;
+  padding: 20px;/* Padding around the container */
+  background: linear-gradient(to bottom, #d7eef3, #eaf8fa, #f0fff0);
+}
+
+.services-container h2 {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #000;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  /* Responsive grid */
+  gap: 30px;/* Space between items */
+  max-width: 1000px;
+}
+
+
+.service {
+  background: #f8f9fa;
+  /* Light gray background */
+  padding: 10px;/* Padding inside each service box */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px #e8eff2;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  /* Hover effect */
+}
+
+.service h3{
+  font-weight: bold;
+}
+
+
+.about-container {
+  text-align: center;  
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.about-container h2 {
+  width: fit-content;
+  margin: 0 auto 20px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 10px;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Footer container */
+footer {
+  display: block;
+  width: 100%;
+  max-width: auto;
+  /* Full width */
+  margin: 0 auto;
+  font-size: 12px;
+  box-sizing: border-box;
+  background-color: #023C6C;
+
+}
+
+
+.business-hours , .social-info {
+  padding: 10px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.business-hours h3 {
+  margin: 0 0 10px 0;
+  /* Heading margin */
+}
+
+.social-info a{
+padding: 2px;
+}
+
+
+/* Copyright section */
+.copyright {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  bottom: 0;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  background-color: #3e901d;
+}
+
+
+
+
+/*----------------------------------RESPONSIVE CODE-----------------------------------*/
+/* Hamburger Icon Style */
+.hamburger {
+  display: none;
+  /* hidden by default, visible on mobile */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background-color: #1c1c84;
+  border-radius: 2px;
+}
+
+/* Hide nav on mobile initially */
+nav {
+  transition: max-height 0.3s ease;
+}
+
+/* Responsive Styles for Tablets and Mobiles */
+@media (max-width: 768px) {
+
+  *{
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  body{
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+  }
+
+  /* Stack header */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+
+  nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    max-height: 0;
+    overflow: hidden;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  nav a {
+    padding: 1rem;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .hamburger {
+    display: flex;
+    /* show hamburger */
+  }
+
+  /* Show nav when active */
+  nav.active {
+    max-height: 300px;
+    /* or whatever height fits your links */
+  }
+
+  /* Responsive fix */
+  @media (max-width: 768px) {
+    .hero-text {
+      max-width: 100%;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .hero {
+      padding-top: 5rem;
+      /* Adjusted for mobile */
+    }
+  }
+}
+
+/* Mobile screen tweaks */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.125rem;
+    /* Smaller font size for mobile */  
+  }
+
+  .hero-text p,
+  .hero-text button {
+    font-size: 0.9rem;   
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-text,
+  .hero-image {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+}
