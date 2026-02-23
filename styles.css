@@ -1,15 +1,29 @@
+/* CSS Variables */
+:root {
+  --primary-color: #1c1c84;
+  --secondary-color: #439424;
+  --light-bg: #f8f9fa;
+  --dark-bg: #023C6C;
+  --accent-green: #3e901d;
+  --text-primary: #333;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
 /* Reset default styles */
 * {
   margin: 0;
-  /* Remove default margin */
   padding: 0;
-  /* Remove default padding */
   scroll-behavior: smooth;
-  /* Smooth scrolling */
-  font-family: 'Trebuchet MS';
-  /* Font family */
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
   font-weight: normal;
-  box-sizing: border-box;/* Ensure padding and border are included in element's total width and height */
+  box-sizing: border-box;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
 
 /* Basic layout */
@@ -45,15 +59,12 @@ header {
   display: flex;
   position: fixed;
   justify-content: space-between;
-  /* Better spacing between logo and nav */
   align-items: center;
   box-sizing: border-box;
   background-color: white;
   z-index: 1000;
   padding: 0.5rem 1rem;
-  /* Consistent padding */
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
-  /* Add subtle shadow for better visibility */
+  box-shadow: var(--shadow);
 }
 
 .logo-container {
@@ -93,14 +104,24 @@ nav {
 }
 
 nav a {
-  color: #1c1c84;
-  /* Link color */
+  color: var(--primary-color);
   text-decoration: none;
+  transition: var(--transition);
+  padding: 0.25rem 0.5rem;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus-visible {
   cursor: pointer;
-  color: #439424;
+  color: var(--secondary-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 
@@ -128,36 +149,35 @@ nav a:hover {
 
 .hero-text h1 {
   font-weight: bold;
-  color: #1c1c84;
+  color: var(--primary-color);
   margin-bottom: 1rem;
   display: block;
-  /* Ensure proper display */
 }
 
 .hero-text p {
   font-size: 1rem;
-  
-  align-items: center;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: var(--text-primary);
+  line-height: 1.6;
 }
 
 .hero-text button {
-  align-items: center;
-  padding: 0.60rem 1.25rem;
-  /* Button padding */
+  padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  
-  font-family: 'Trebuchet MS';
-  border: 2px solid black;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  border: 2px solid var(--primary-color);
   border-radius: 15px;
   background-color: white;
+  color: var(--primary-color);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: var(--transition);
+  font-weight: 600;
 }
 
-.hero-text button:hover {
-  background-color: #f0f0f0;
+.hero-text button:hover,
+.hero-text button:focus-visible {
+  background-color: var(--primary-color);
+  color: white;
 }
 
 .hero-image {
@@ -186,7 +206,8 @@ nav a:hover {
 .services-container h2 {
   margin-top: 5px;
   margin-bottom: 20px;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid var(--primary-color);
+  color: var(--primary-color);
 }
 
 .services-grid {
@@ -199,19 +220,20 @@ nav a:hover {
 
 
 .service {
-  background: #f8f9fa;
-  /* Light gray background */
-  padding: 10px;/* Padding inside each service box */
+  background: var(--light-bg);
+  padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 4px 8px #e8eff2;
+  box-shadow: var(--shadow);
   text-align: center;
-  transition: transform 0.3s ease-in-out;
+  transition: var(--transition);
+  border-left: 4px solid var(--primary-color);
 }
 
-.service:hover {
+.service:hover,
+.service:focus-within {
   cursor: pointer;
-  transform: scale(1.05);
-  /* Hover effect */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .service h3{
@@ -232,8 +254,9 @@ nav a:hover {
 .about-container h2 {
   width: fit-content;
   margin: 0 auto 20px;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid var(--primary-color);
   padding-bottom: 10px;
+  color: var(--primary-color);
 }
 
 .about-content {
@@ -247,17 +270,15 @@ footer {
   display: block;
   width: 100%;
   max-width: auto;
-  /* Full width */
   margin: 0 auto;
   font-size: 12px;
   box-sizing: border-box;
-  background-color: #023C6C;
-
+  background-color: var(--dark-bg);
 }
 
-
-.business-hours , .social-info {
-  padding: 10px;
+.business-hours,
+.social-info {
+  padding: 20px;
   text-align: center;
   color: #ffffff;
 }
@@ -278,9 +299,9 @@ padding: 2px;
   flex-direction: row;
   justify-content: center;
   bottom: 0;
-  padding-bottom: 4px;
-  padding-top: 4px;
-  background-color: #3e901d;
+  padding: 15px 0;
+  background-color: var(--accent-green);
+  color: white;
 }
 
 
@@ -302,8 +323,9 @@ padding: 2px;
 .hamburger span {
   height: 3px;
   width: 100%;
-  background-color: #1c1c84;
+  background-color: var(--primary-color);
   border-radius: 2px;
+  transition: var(--transition);
 }
 
 /* Hide nav on mobile initially */
@@ -360,22 +382,17 @@ nav {
 
   /* Show nav when active */
   nav.active {
-    max-height: 300px;
-    /* or whatever height fits your links */
+    max-height: 400px;
   }
 
-  /* Responsive fix */
-  @media (max-width: 768px) {
-    .hero-text {
-      max-width: 100%;
-      text-align: center;
-      padding: 1rem;
-    }
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
 
-    .hero {
-      padding-top: 5rem;
-      /* Adjusted for mobile */
-    }
+  .hero {
+    padding-top: 5rem;
   }
 }
 
